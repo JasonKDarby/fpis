@@ -1,6 +1,8 @@
+package two
+
 import org.scalatest.FlatSpec
 import org.scalatest.prop.TableDrivenPropertyChecks
-import two.one
+import org.scalatest.Assertions._
 
 class oneSpec extends FlatSpec with TableDrivenPropertyChecks {
 
@@ -19,7 +21,7 @@ class oneSpec extends FlatSpec with TableDrivenPropertyChecks {
   )
 
   forAll(fibNumbers) { (input: Int, expected: Int) =>
-    "one: A fibonacci function" should s"return $expected when given $input" in {
+    "fib" should s"return $expected when given $input" in {
       val out = one.fib(input)
       assert(out == expected)
     }
