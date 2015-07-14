@@ -9,14 +9,14 @@ class twoSpec extends FlatSpec with TableDrivenPropertyChecks {
   val tailParameters = Table(
     ("input", "expected"),
     (Nil, Nil),
-    (three.List(1), 1),
-    (three.List(1,2), 2),
-    (three.List(1,2,3), 3)
+    (_root_.three.List(1), 1),
+    (_root_.three.List(1,2), 2),
+    (_root_.three.List(1,2,3), 3)
   )
 
   forAll(tailParameters) { (input, expected) =>
     "tail" should s"return $expected when given $input" in {
-      assert(three.two.tail(input).getOrElse(Nil) == expected)
+      assert(_root_.three.two.tail(input).getOrElse(Nil) == expected)
     }
   }
 

@@ -1,0 +1,7 @@
+package three
+
+object three {
+
+
+
+}
