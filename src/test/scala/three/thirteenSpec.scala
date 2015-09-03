@@ -4,7 +4,7 @@ import org.scalatest.FlatSpec
 import org.scalatest.Assertions._
 import org.scalatest.prop.TableDrivenPropertyChecks
 
-class tenSpec extends FlatSpec with TableDrivenPropertyChecks {
+class thirteenSpec extends FlatSpec with TableDrivenPropertyChecks {
 
   val foldLeftParameters = Table(
     ("as", "z", "f", "expected"),
@@ -14,8 +14,12 @@ class tenSpec extends FlatSpec with TableDrivenPropertyChecks {
   )
 
   forAll(foldLeftParameters) { (as, z, f, expected) =>
-    "foldLeft" should s"return $expected given $as, $z, and some function" in {
-      assert(Fold.left(as, z)(f) == expected)
+    "foldLeft" should s"return $expected given $as, $z, and $f" in {
+      assert(thirteen.foldLeft(as, z)(f) == expected)
+    }
+
+    "foldRight" should s"return $expected given $as, $z, and $f" in {
+      assert(thirteen.foldRight(as, z)(f) == expected)
     }
   }
 

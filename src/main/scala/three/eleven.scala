@@ -11,7 +11,7 @@ object eleven {
   }
 
   def length[A](as: List[A]): Int = {
-    Fold.left(as, 0)((b, a) => b+1)
+    Fold.left(as, 0)((a, b) => b+1)
   }
 
 }
